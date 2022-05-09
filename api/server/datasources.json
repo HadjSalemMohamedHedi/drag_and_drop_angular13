@@ -1,0 +1,16 @@
+{
+    "db": {
+        "name": "db",
+        "connector": "memory"
+    },
+    "taskmanagers": {
+        "host": "localhost",
+        "port": 3306,
+        "url": "",
+        "database": "taskmanagers",
+        "password": "",
+        "name": "taskmanagers",
+        "user": "root",
+        "connector": "mysql"
+    }
+}

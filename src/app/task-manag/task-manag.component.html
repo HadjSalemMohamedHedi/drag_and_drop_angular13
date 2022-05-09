@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-3">
+        <h2>To Do</h2>
+        <div class="todo dragList" cdkDropList #todoList="cdkDropList" [cdkDropListData]="toDos" [cdkDropListConnectedTo]="[doingList, doneList]" (cdkDropListDropped)="drop($event)">
+            <div class="task alert alert-danger" *ngFor="let todo of toDos" [cdkDragData]="todo" cdkDrag>
+                {{ todo.title }}: {{ todo.content }}
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="col-sm-4">
+        <h2>Doing</h2>
+
+        <div class="doing dragList" cdkDropList #doingList="cdkDropList" [cdkDropListData]="doing" [cdkDropListConnectedTo]="[doingList, todoList, doneList]" (cdkDropListDropped)="drop($event)">
+            <div class="task alert alert-info" *ngFor="let todo of doing" [cdkDragData]="todo" cdkDrag>
+                {{ todo.title }}: {{ todo.content }}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <h2>Done</h2>
+        <div class="done dragList" cdkDropList #doneList="cdkDropList" [cdkDropListData]="Done" [cdkDropListConnectedTo]="[doingList, todoList, doneList]" (cdkDropListDropped)="drop($event)">
+            <div class="task alert alert-success" *ngFor="let todo of Done" [cdkDragData]="todo" cdkDrag>
+                {{ todo.title }}: {{ todo.content }}
+            </div>
+        </div>
+    </div>
+</div>
